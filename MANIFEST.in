@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include news *.css
+recursive-include news *.csv
+recursive-include news *.html
+recursive-include news *.ico
+recursive-include news *.js
+recursive-include news *.json
+recursive-include news *.md
+recursive-include news *.png
+recursive-include news *.py
+recursive-include news *.svg
+recursive-include news *.txt
+recursive-exclude news *.pyc
