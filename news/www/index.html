@@ -91,11 +91,10 @@
             <!-- Header Mobile -->
             <div class="wrap-header-mobile">
                 <!-- Logo moblie -->
-                {% for l in logo %}
+
                 <div class="logo-mobile">
-                    <a href="/"><img src="{{l.logo}}" alt="IMG-LOGO"></a>
+                    <a href="/"><img src="/assets/news/news/images/icons/logo-01.png" alt="IMG-LOGO"></a>
                 </div>
-                {% endfor %}
 
                 <!-- Button show menu -->
                 <div class="btn-show-menu-mobile hamburger hamburger--squeeze m-r--8">
@@ -1228,114 +1227,125 @@
             <div class="row m-rl--1">
                 {% for p in post %}
                 <div class="col-md-6 p-rl-1 p-b-2">
-                    <div class="bg-img1 size-a-3 how1 pos-relative" style="background-image: url({{p.meta_image}});">
-                        <a href="/details/{{p.name}}" class="dis-block how1-child1 trans-03"></a>
+                    {% if p.meta_image == '' %}
+                    <div class="bg-img1 size-a-3 how1 pos-relative">
+                        <iframe width="520" height="440" src="https://www.youtube.com/embed/{{p.video_id}}"></iframe>
 
-                        <div class="flex-col-e-s s-full p-rl-25 p-tb-20">
-                            <a href="#" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
+
+                        <!-- Else -->
+                        {% else %}
+                        <div class="bg-img1 size-a-3 how1 pos-relative" style="background-image: url({{p.meta_image}});">
+                            <a href="/details/{{p.name}}" class="dis-block how1-child1 trans-03"></a>
+                            <!-- end -->
+                            {% endif %}
+
+
+
+                            <div class="flex-col-e-s s-full p-rl-25 p-tb-20">
+                                <a href="#" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
 								{{p.blog_category}}
 							</a>
-                            <h3 class="how1-child2 m-t-14 m-b-10">
-                                <a href="/details/{{p.name}}" class="how-txt1 size-a-6 f1-l-1 cl0 hov-cl10 trans-03">
+                                <h3 class="how1-child2 m-t-14 m-b-10">
+                                    <a href="/details/{{p.name}}" class="how-txt1 size-a-6 f1-l-1 cl0 hov-cl10 trans-03">
 									{{p.title}}
 								</a>
-                            </h3>
+                                </h3>
 
 
-                            <span class="how1-child2">
+                                <span class="how1-child2">
 								<span class="f1-s-4 cl11">
 									{{p.blogger}}
 								</span>
 
-                            <span class="f1-s-3 cl11 m-rl-3">
+                                <span class="f1-s-3 cl11 m-rl-3">
 									-
 								</span>
 
-                            <span class="f1-s-3 cl11">
+                                <span class="f1-s-3 cl11">
 									{{p.published_on}}
 								</span>
-                            </span>
+                                </span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                {% endfor %}
+                    {% endfor %}
 
 
-                <div class="col-md-6 p-rl-1">
-                    <div class="row m-rl--1">
+                    <div class="col-md-6 p-rl-1">
+                        <div class="row m-rl--1">
 
-                        {% for p2 in post2 %}
-                        <div class="col-12 p-rl-1 p-b-2">
-                            <div class="bg-img1 size-a-4 how1 pos-relative" style="background-image: url({{p2.meta_image}});">
-                                <a href="/details/{{p2.name}}" class="dis-block how1-child1 trans-03"></a>
+                            {% for p2 in post2 %}
+                            <div class="col-12 p-rl-1 p-b-2">
+                                <div class="bg-img1 size-a-4 how1 pos-relative" style="background-image: url({{p2.meta_image}});">
+                                    <a href="/details/{{p2.name}}" class="dis-block how1-child1 trans-03"></a>
 
-                                <div class="flex-col-e-s s-full p-rl-25 p-tb-24">
-                                    <a href="#" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
+                                    <div class="flex-col-e-s s-full p-rl-25 p-tb-24">
+                                        <a href="#" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
 										{{p2.blog_category}}
 									</a>
 
-                                    <h3 class="how1-child2 m-t-14">
-                                        <a href="/details/{{p2.name}}" class="how-txt1 size-a-7 f1-l-2 cl0 hov-cl10 trans-03">
+                                        <h3 class="how1-child2 m-t-14">
+                                            <a href="/details/{{p2.name}}" class="how-txt1 size-a-7 f1-l-2 cl0 hov-cl10 trans-03">
 											{{p2.title}}
 										</a>
-                                    </h3>
+                                        </h3>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        {% endfor %}
+                            {% endfor %}
 
-                        <!-- Post 3 -->
+                            <!-- Post 3 -->
 
-                        {% for p3 in post3 %}
-                        <div class="col-sm-6 p-rl-1 p-b-2">
-                            <div class="bg-img1 size-a-5 how1 pos-relative" style="background-image: url({{p3.meta_image}});">
-                                <a href="/details/{{p3.name}}" class="dis-block how1-child1 trans-03"></a>
+                            {% for p3 in post3 %}
+                            <div class="col-sm-6 p-rl-1 p-b-2">
+                                <div class="bg-img1 size-a-5 how1 pos-relative" style="background-image: url({{p3.meta_image}});">
+                                    <a href="/details/{{p3.name}}" class="dis-block how1-child1 trans-03"></a>
 
-                                <div class="flex-col-e-s s-full p-rl-25 p-tb-20">
-                                    <a href="#" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
+                                    <div class="flex-col-e-s s-full p-rl-25 p-tb-20">
+                                        <a href="#" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
 										{{p3.blog_category}}
 									</a>
 
-                                    <h3 class="how1-child2 m-t-14">
-                                        <a href="/details/{{p3.name}}" class="how-txt1 size-h-1 f1-m-1 cl0 hov-cl10 trans-03">
+                                        <h3 class="how1-child2 m-t-14">
+                                            <a href="/details/{{p3.name}}" class="how-txt1 size-h-1 f1-m-1 cl0 hov-cl10 trans-03">
 											{{p3.title}}
 										</a>
-                                    </h3>
+                                        </h3>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        {% endfor %}
+                            {% endfor %}
 
 
-                        <!-- Post 3 -->
+                            <!-- Post 3 -->
 
-                        {% for p4 in post4 %}
+                            {% for p4 in post4 %}
 
-                        <div class="col-sm-6 p-rl-1 p-b-2">
-                            <div class="bg-img1 size-a-5 how1 pos-relative" style="background-image: url({{p4.meta_image}});">
-                                <a href="/details/{{p4.name}}" class="dis-block how1-child1 trans-03"></a>
+                            <div class="col-sm-6 p-rl-1 p-b-2">
+                                <div class="bg-img1 size-a-5 how1 pos-relative" style="background-image: url({{p4.meta_image}});">
+                                    <a href="/details/{{p4.name}}" class="dis-block how1-child1 trans-03"></a>
 
-                                <div class="flex-col-e-s s-full p-rl-25 p-tb-20">
-                                    <a href="#" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
+                                    <div class="flex-col-e-s s-full p-rl-25 p-tb-20">
+                                        <a href="#" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
 										{{p4.blog_category}}
 									</a>
 
-                                    <h3 class="how1-child2 m-t-14">
-                                        <a href="/details/{{p4.name}}" class="how-txt1 size-h-1 f1-m-1 cl0 hov-cl10 trans-03">
+                                        <h3 class="how1-child2 m-t-14">
+                                            <a href="/details/{{p4.name}}" class="how-txt1 size-h-1 f1-m-1 cl0 hov-cl10 trans-03">
 											{{p4.title}}
 										</a>
-                                    </h3>
+                                        </h3>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        {% endfor %}
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <!-- Post -->

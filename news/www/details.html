@@ -2341,7 +2341,12 @@
                             </div>
 
                             <div class="wrap-pic-max-w p-b-30">
-                                <img src="{{detail.meta_image}}" alt="IMG">
+                                {% if detail.meta_image == '' %}
+                                <iframe width="600" height="500" src="{{detail.video_link}}"></iframe>
+
+                                <!-- Else -->
+                                {% else %}
+                                <img src="{{detail.meta_image}}" alt="IMG"> {% endif %}
                             </div>
 
                             <p class="f1-s-11 cl6 p-b-25">
